@@ -1,0 +1,14 @@
+Vagrant.configure("2") do |config|
+    config.vm.provision "shell", inline: "echo Hello"
+    config.vm.box = "ubuntu/bionic64"
+    config.vm.provider "virtualbox" do |vb|
+        vb.memory = "2048"
+    end
+    config.vm.define "mon01" , autostart: true do |mon01|
+        mon01.vm.network "private_network", ip: "192.168.33.10"
+    end
+
+    config.vm.define "mon02" , autostart: true do |mon02|
+        mon02.vm.network "private_network", ip: "192.168.33.11"
+    end
+  end

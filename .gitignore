@@ -1,0 +1,4 @@
+*.log
+.vscode
+.vagrant
+.haproxy.cfg.swp
